@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+:root {
+ --white: #dce2e7;
+ --white-dark: #c9d1d9;
+ --gray: #8b949e;
+ --link: #58a6ff;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins';
+ list-style: none;
+ word-wrap: break-word;
+ box-sizing: border-box;
+ text-decoration: none;
+}
+
+@font-face {
+    font-family: Segoe_normal;
+    src: url(./fonts/Segoe\ UI.ttf);
+}
+@font-face {
+    font-family: Segoe_bold;
+    src: url(./fonts/Segoe\ UI\ Bold.ttf);
+}
+
+
+body {
+ background-color: #282e28;
+ overflow-x: hidden;
+}
+
+body.result {
+ background-color: #0d1117;
+}
+
+main { 
+ width: 100vw;
+ height: 100vh;
+}
+
+.container {
+ display: none;
+}
+
+.container.active {
+ display: unset;
+}
+
+main section.search form {
+ width: 50vw;
+ height: 50vh;
+ background-color: #ccc;
+ border-radius: 5px;
+ 
+ position: relative;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+main section.search form h1 {
+ color: rgb(233, 69, 69);
+ font: 700 2rem "Poppins";
+ margin: 2rem 0 3rem;
+}
+
+main section.search form input {
+ width: 70%;
+ height: 30px;
+ margin: 1rem 0;
+ border: none;
+ border-radius: 5px;
+ outline: none;
+}
+
+main section.search form input[type="text"] {
+ padding: 15px;
+}
+
+main section.search form input[type="text"]:hover {
+ opacity: .7;
+}
+
+main section.search form input[type="submit"]:hover {
+ cursor: pointer;
+ opacity: .8;
+ transform: scale(.93);
+ transition: .2.8s;
+}
+
+section.container.result div.profile {
+ width: 25vw;
+ padding: 2em 0 0 2em;
+}
+
+section.container.result div.profile div.photo img {
+ width: 300px;
+ clip-path: circle();
+}
+
+section.container.result div.profile div.names {
+ display: flex;
+ flex-direction: column;
+ margin: 7px 0 10px;
+}
+
+section.container.result div.profile div.names span.name {
+ font: 500 20px "Poppins";
+ color: var(--white);
+}
+
+section.container.result div.profile div.names span.username {
+ font: 400 14px "Poppins";
+ color: var(--gray);
+}
+
+section.container.result div.profile p.bio {
+ letter-spacing: .4px;
+ font-family: Segoe_normal;
+ line-height: 20px;
+ color: var(--white);
+ margin: .5em 0 1em;
+}
+
+section.container.result div.others {
+ height: 40px;
+ display: flex;
+ align-items: center;
+}
+
+section.container.result div.others div {
+ display: flex;
+ align-items: center;
+ font-family: Segoe_normal;
+ color: var(--gray);
+ fill: var(--gray);
+ font-size: 14px;
+ cursor: pointer;
+}
+
+section.container.result div.others div:hover {
+ color: var(--link);
+ fill: var(--link);
+}
+
+section.container.result div.others div * {
+ margin: 0 3px;
+}
+
+section.container.result div.others div span.f {
+ margin-bottom: 1.3px;
+}
+
+section.container.result div.others div span.total {
+ font: 500 14px "Poppins";
+ margin-top: 1.5px;
+ color: var(--white);
+}
+
+section.container.result div.others div span.hr { 
+ margin-top: 2.5px;
+ color: var(--gray);
+}
+
+section.container.result div.details div {
+ width: max-content;
+ display: flex;
+ align-items: center;
+ margin: 5px 0;
+}
+
+section.container.result div.details div svg {
+ fill: var(--gray);
+ color: var(--gray);
+ margin-right: 10px;
+}
+
+section.container.result div.details div span {
+ font-family: Segoe_normal;
+ color: var(--white);
+ font-size: 13px;
+}
+
+section.container.result div.details div.hover:hover svg, section.container.result div.details div.hover:hover span {
+ fill: var(--link);
+ color: var(--link);
+ text-decoration: underline;
+}
+
+section.container.not-found.active {
+ width: 300px;
+ height: 400px;
+ border-radius: 10px;
+ background-color: #fff;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ font-size: 1.2rem;
+}
+
+section.container.not-found button {
+ background: none;
+ border: none;
+ color: var(--link);
+ text-decoration: underline;
+ margin-top: 5rem;
+ font: 500 15px "Poppins";
+ cursor: pointer;
+}
+
+
+@media (max-width: 500px) {
+    main section.search form {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1015px) {
+    main section.search form {
+        width: 70vw;
+        height: 70vh;
+        text-align: center;
+    }
+
+    main section.search form input {width: 90%}
+}
+
+@media (max-width: 1020px) {
+    main section.search form {text-align: center}
+}
+
+@media (max-height: 500px) {
+    main section.search form {
+        height: 100vh;
+        text-align: center;
+    }
+}
+
+@media (max-height: 320px) {
+    main section.search form h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0 2rem;
+    }
+}
+
+@media (max-height: 250px) {
+    main section.search form h1 {
+        font-size: 1.3rem;
+        margin: .5rem 0 1rem;
+    }
+}
