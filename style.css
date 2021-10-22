@@ -140,6 +140,7 @@ section.result.active {
 section.result.active div.profile {
  width: 25vw;
  padding: 2em 0 0 2em;
+ position: relative;
 }
 
 section.result.active div.profile div.photo img {
@@ -236,6 +237,11 @@ section.result.active div.details div.hover:hover svg, section.result.active div
  text-decoration: underline;
 }
 
+section.result.active div.repos {
+ position: relative;
+ padding-bottom: 100px;
+}
+
 section.result.active div.repo {
  width: 100vw;
  display: flex;
@@ -306,6 +312,43 @@ section.result.active div.repo .bottom div.lang div {
 
 .container.result.active .repos div.repo .bottom div.lang div.ejs {background-color: #a91e50} .container.result.active .repos div.repo .bottom div.lang div.gnuplot {background-color: #f0a9f0} .container.result.active .repos div.repo .bottom div.lang div.lua {background-color: #000080}  .container.result.active .repos div.repo .bottom div.lang div.c {background-color: #555555} .container.result.active .repos div.repo .bottom div.lang div.c-more {background-color: #f34b7d} .container.result.active .repos div.repo .bottom div.lang div.c-sharp {background-color: #178600} .container.result.active .repos div.repo .bottom div.lang div.go {background-color: #00add8} .container.result.active .repos div.repo .bottom div.lang div.swift {background-color: #ffac45} .container.result.active .repos div.repo .bottom div.lang div.scala {background-color: #c22d40} .container.result.active .repos div.repo .bottom div.lang div.java {background-color: #b07219} .container.result.active .repos div.repo .bottom div.lang div.javascript {background-color: #f1e05a} .container.result.active .repos div.repo .bottom div.lang div.html {background-color: #e34c26} .container.result.active .repos div.repo .bottom div.lang div.css {background-color: #563d7c} .container.result.active .repos div.repo .bottom div.lang div.typescript {background-color: #2b7489} .container.result.active .repos div.repo .bottom div.lang div.readme, .container.result.active .repos div.repo .bottom div.lang div.coffeescript {background-color: #174a8b} .container.result.active .repos div.repo .bottom div.lang div.objective-c {background-color: #438eff} .container.result.active .repos div.repo .bottom div.lang div.shell {background-color: #89e051} .container.result.active .repos div.repo .bottom div.lang div.ruby {background-color: #701516} .container.result.active .repos div.repo .bottom div.lang div.python {background-color: #3572a5} .container.result.active .repos div.repo .bottom div.lang div.php {background-color: #4f5d95} .container.result.active .repos div.repo .bottom div.lang div.assembly {background-color: #6e4c13} .container.result.active .repos div.repo .bottom div.lang div.pascal {background-color: #e3f171} .container.result.active .repos div.repo .bottom div.lang div.elixir {background-color: #6e4a7e} .container.result.active .repos div.repo .bottom div.lang div.dart {background-color: #00b4ab} .container.result.active .repos div.repo .bottom div.lang div.graphql {background-color: #e10098} .container.result.active .repos div.repo .bottom div.lang div.vue {background-color: #41b883}
 
+.container.result.active .repos div.buttons {
+ position: absolute;
+ margin: 2rem 0;
+ left: 25%;
+ transform: translate(-25%, -0%);
+}
+
+.container.result.active .repos div.buttons button {
+ color: var(--link);
+ padding: 5px 16px;
+ font: 500 14px "Poppins";
+ border: 1px solid #21262d;
+ background: none;
+ opacity: .5;
+}
+
+.container.result.active .repos div.buttons button.clickable {
+ background-color: #343942;
+ opacity: .8;
+ cursor: pointer;
+ transition: .2s;
+}
+
+.container.result.active .repos div.buttons button.clickable:hover {
+ opacity: 1;
+}
+
+.container.result.active .repos div.buttons button.prev {
+ border-right: none;
+ border-radius: 5px 0 0 5px;
+}
+
+.container.result.active .repos div.buttons button.next {
+ margin-left: -3.4px;
+ border-radius: 0 5px 5px 0;
+}
+
 section.container.not-found.active {
  width: 300px;
  height: 400px;
@@ -350,8 +393,33 @@ section.container.not-found button {
     main section.search form input {width: 90%}
 }
 
+@media (max-width: 820px) {
+    body {
+        overflow-x: visible;
+    }
+    header {position: fixed}
+
+    section.container.result {flex-direction: column}
+
+    section.result.active div.profile div.photo img { width: 200px }
+    
+    section.result.active div.repos div.repo {
+        width: 455px;
+    }
+}
+
 @media (max-width: 1020px) {
     main section.search form {text-align: center}
+
+    .container.result.active .repos {
+        margin-left: 100px !important;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1000px) {
+    .container.result.active .repos {
+        margin-left: 50px;
+    }
 }
 
 @media (max-height: 500px) {
