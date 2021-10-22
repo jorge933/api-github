@@ -97,6 +97,10 @@ main section.search form input[type="submit"]:hover {
  transition: .2.8s;
 }
 
+section.container.result {
+ display: flex;
+}
+
 section.container.result div.profile {
  width: 25vw;
  padding: 2em 0 0 2em;
@@ -195,6 +199,73 @@ section.container.result div.details div.hover:hover svg, section.container.resu
  color: var(--link);
  text-decoration: underline;
 }
+
+section.container.result div.repo {
+ display: flex;
+ flex-direction: column;
+ margin: 5rem 0 0 2rem;
+}
+
+section.container.result div.repo .top {
+ display: flex;
+ align-items: center;
+ margin-bottom: 5px;
+ height: 40px;
+}
+
+section.container.result div.repo .top span {
+ font: 500 17px "Poppins";
+ color: var(--link);
+ cursor: pointer;
+}
+
+section.container.result div.repo .top span:hover {
+ text-decoration: underline;
+}
+
+section.container.result div.repo p.description {
+ font-family: Segoe_normal;
+ font-size: 15px;
+ color: var(--gray);
+}
+
+section.container.result div.repo .bottom {
+ display: flex;
+ align-items: center;
+ height: 40px;
+ margin: 5px 0 0 -7px;
+}
+
+section.container.result div.repo .bottom div, section.container.result div.repo .bottom p {
+ display: flex;
+ align-items: center;
+ margin: 0 10px;
+ color: var(--gray);
+ fill: var(--gray);
+ font-family: Segoe_normal;
+ font-size: 13px;
+}
+
+section.container.result div.repo .bottom div.stars, section.container.result div.repo .bottom div.forks {
+ font-size: 12px;
+}
+
+section.container.result div.repo .bottom div svg {
+ height: 14px;
+ margin-right: 6px;
+}
+section.container.result div.repo .bottom div.lang {
+ margin: 0 10px 0 -3px;
+}
+
+section.container.result div.repo .bottom div.lang div {
+ width: 12px;
+ height: 12px;
+ border-radius: 50%;
+ border: 2px solid rgb(240 246 252 / 20%);
+}
+
+.container.result.active .repos div.repo .bottom div.lang div.ejs {background-color: #a91e50} .container.result.active .repos div.repo .bottom div.lang div.gnuplot {background-color: #f0a9f0} .container.result.active .repos div.repo .bottom div.lang div.lua {background-color: #000080}  .container.result.active .repos div.repo .bottom div.lang div.c {background-color: #555555} .container.result.active .repos div.repo .bottom div.lang div.c-more {background-color: #f34b7d} .container.result.active .repos div.repo .bottom div.lang div.c-sharp {background-color: #178600} .container.result.active .repos div.repo .bottom div.lang div.go {background-color: #00add8} .container.result.active .repos div.repo .bottom div.lang div.swift {background-color: #ffac45} .container.result.active .repos div.repo .bottom div.lang div.scala {background-color: #c22d40} .container.result.active .repos div.repo .bottom div.lang div.java {background-color: #b07219} .container.result.active .repos div.repo .bottom div.lang div.javascript {background-color: #f1e05a} .container.result.active .repos div.repo .bottom div.lang div.html {background-color: #e34c26} .container.result.active .repos div.repo .bottom div.lang div.css {background-color: #563d7c} .container.result.active .repos div.repo .bottom div.lang div.typescript {background-color: #2b7489} .container.result.active .repos div.repo .bottom div.lang div.readme, .container.result.active .repos div.repo .bottom div.lang div.coffeescript {background-color: #174a8b} .container.result.active .repos div.repo .bottom div.lang div.objective-c {background-color: #438eff} .container.result.active .repos div.repo .bottom div.lang div.shell {background-color: #89e051} .container.result.active .repos div.repo .bottom div.lang div.ruby {background-color: #701516} .container.result.active .repos div.repo .bottom div.lang div.python {background-color: #3572a5} .container.result.active .repos div.repo .bottom div.lang div.php {background-color: #4f5d95} .container.result.active .repos div.repo .bottom div.lang div.assembly {background-color: #6e4c13} .container.result.active .repos div.repo .bottom div.lang div.pascal {background-color: #e3f171} .container.result.active .repos div.repo .bottom div.lang div.elixir {background-color: #6e4a7e} .container.result.active .repos div.repo .bottom div.lang div.dart {background-color: #00b4ab} .container.result.active .repos div.repo .bottom div.lang div.graphql {background-color: #e10098} .container.result.active .repos div.repo .bottom div.lang div.vue {background-color: #41b883}
 
 section.container.not-found.active {
  width: 300px;
