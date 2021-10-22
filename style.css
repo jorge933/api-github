@@ -325,7 +325,6 @@ section.result.active div.repo .bottom div.lang div {
  font: 500 14px "Poppins";
  border: 1px solid #21262d;
  background: none;
- opacity: .5;
 }
 
 .container.result.active .repos div.buttons button.clickable {
@@ -337,6 +336,11 @@ section.result.active div.repo .bottom div.lang div {
 
 .container.result.active .repos div.buttons button.clickable:hover {
  opacity: 1;
+}
+
+.container.result.active .repos div.buttons button.not-clickabe { /*está errado porquê css não sendo aplicado*/
+ background: none;
+ opacity: .5;
 }
 
 .container.result.active .repos div.buttons button.prev {
