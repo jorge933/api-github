@@ -38,6 +38,42 @@ body.result {
  background-color: #0d1117;
 }
 
+header {
+ position: relative;
+ left: 27.795%;
+}
+
+header span.repositories-count {
+ height: 50px;
+ margin-top: 10px;
+ border-bottom: 1px solid #f78166;
+ color: var(--white-dark);
+ fill: var(--white-dark);
+ display: flex;
+ align-items: center;
+ width: max-content;
+ font-size: 13px;
+}
+
+header span.repositories-count * {
+ margin: 0 5px;
+}
+
+header span .count {
+ width: fit-content;
+ height: fit-content;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ padding: 5px;
+ border-radius: 50%;
+ background-color: #343942;
+ font-size: 12px;
+ clip-path: circle();
+}
+
 main { 
  width: 100vw;
  height: 100vh;
@@ -97,37 +133,37 @@ main section.search form input[type="submit"]:hover {
  transition: .2.8s;
 }
 
-section.container.result {
+section.result.active {
  display: flex;
 }
 
-section.container.result div.profile {
+section.result.active div.profile {
  width: 25vw;
  padding: 2em 0 0 2em;
 }
 
-section.container.result div.profile div.photo img {
+section.result.active div.profile div.photo img {
  width: 300px;
  clip-path: circle();
 }
 
-section.container.result div.profile div.names {
+section.result.active div.profile div.names {
  display: flex;
  flex-direction: column;
  margin: 7px 0 10px;
 }
 
-section.container.result div.profile div.names span.name {
+section.result.active div.profile div.names span.name {
  font: 500 20px "Poppins";
  color: var(--white);
 }
 
-section.container.result div.profile div.names span.username {
+section.result.active div.profile div.names span.username {
  font: 400 14px "Poppins";
  color: var(--gray);
 }
 
-section.container.result div.profile p.bio {
+section.result.active div.profile p.bio {
  letter-spacing: .4px;
  font-family: Segoe_normal;
  line-height: 20px;
@@ -135,13 +171,13 @@ section.container.result div.profile p.bio {
  margin: .5em 0 1em;
 }
 
-section.container.result div.others {
+section.result.active div.others {
  height: 40px;
  display: flex;
  align-items: center;
 }
 
-section.container.result div.others div {
+section.result.active div.others div {
  display: flex;
  align-items: center;
  font-family: Segoe_normal;
@@ -151,117 +187,120 @@ section.container.result div.others div {
  cursor: pointer;
 }
 
-section.container.result div.others div:hover {
+section.result.active div.others div:hover {
  color: var(--link);
  fill: var(--link);
 }
 
-section.container.result div.others div * {
+section.result.active div.others div * {
  margin: 0 3px;
 }
 
-section.container.result div.others div span.f {
+section.result.active div.others div span.f {
  margin-bottom: 1.3px;
 }
 
-section.container.result div.others div span.total {
+section.result.active div.others div span.total {
  font: 500 14px "Poppins";
  margin-top: 1.5px;
  color: var(--white);
 }
 
-section.container.result div.others div span.hr { 
+section.result.active div.others div span.hr { 
  margin-top: 2.5px;
  color: var(--gray);
 }
 
-section.container.result div.details div {
+section.result.active div.details div {
  width: max-content;
  display: flex;
  align-items: center;
  margin: 5px 0;
 }
 
-section.container.result div.details div svg {
+section.result.active div.details div svg {
  fill: var(--gray);
  color: var(--gray);
  margin-right: 10px;
 }
 
-section.container.result div.details div span {
+section.result.active div.details div span {
  font-family: Segoe_normal;
  color: var(--white);
  font-size: 13px;
 }
 
-section.container.result div.details div.hover:hover svg, section.container.result div.details div.hover:hover span {
+section.result.active div.details div.hover:hover svg, section.result.active div.details div.hover:hover span {
  fill: var(--link);
  color: var(--link);
  text-decoration: underline;
 }
 
-section.container.result div.repo {
+section.result.active div.repo {
+ width: 100vw;
  display: flex;
  flex-direction: column;
- margin: 5rem 0 0 2rem;
+ border-bottom: 1.5px solid #21262d;
+ margin: 1rem 0 0 2rem;
 }
 
-section.container.result div.repo .top {
+section.result.active div.repo .top {
  display: flex;
  align-items: center;
  margin-bottom: 5px;
- height: 40px;
+ height: 30px;
 }
 
-section.container.result div.repo .top span {
+section.result.active div.repo .top span {
  font: 500 17px "Poppins";
  color: var(--link);
  cursor: pointer;
 }
 
-section.container.result div.repo .top span:hover {
+section.result.active div.repo .top span:hover {
  text-decoration: underline;
 }
 
-section.container.result div.repo p.description {
+section.result.active div.repo p.description {
  font-family: Segoe_normal;
  font-size: 15px;
  color: var(--gray);
 }
 
-section.container.result div.repo .bottom {
+section.result.active div.repo .bottom {
  display: flex;
  align-items: center;
- height: 40px;
- margin: 5px 0 0 -7px;
+ height: 30px;
+ margin: 5px 0 0 ;
 }
 
-section.container.result div.repo .bottom div, section.container.result div.repo .bottom p {
+section.result.active div.repo .bottom div, section.result.active div.repo .bottom p {
  display: flex;
  align-items: center;
- margin: 0 10px;
+ margin: 0 10px 0 4px;
  color: var(--gray);
  fill: var(--gray);
  font-family: Segoe_normal;
  font-size: 13px;
 }
 
-section.container.result div.repo .bottom div.stars, section.container.result div.repo .bottom div.forks {
+section.result.active div.repo .bottom div.stars, section.result.active div.repo .bottom div.forks {
  font-size: 12px;
 }
 
-section.container.result div.repo .bottom div svg {
+section.result.active div.repo .bottom div svg {
  height: 14px;
  margin-right: 6px;
 }
-section.container.result div.repo .bottom div.lang {
+section.result.active div.repo .bottom div.lang {
  margin: 0 10px 0 -3px;
 }
 
-section.container.result div.repo .bottom div.lang div {
+section.result.active div.repo .bottom div.lang div {
  width: 12px;
  height: 12px;
  border-radius: 50%;
+ background-color: rgb(168, 168, 168);
  border: 2px solid rgb(240 246 252 / 20%);
 }
 
