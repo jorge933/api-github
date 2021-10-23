@@ -237,12 +237,12 @@ section.result.active div.details div.hover:hover svg, section.result.active div
  text-decoration: underline;
 }
 
-div.repos div.repos {
+.repos .repos {
  position: relative;
  padding-bottom: 100px;
 }
 
-div.repos div.repo {
+.repos div.repo {
  width: 100vw;
  display: flex;
  flex-direction: column;
@@ -250,37 +250,37 @@ div.repos div.repo {
  margin: 1rem 0 0 2rem;
 }
 
-div.repos div.repo .top {
+.repos div.repo .top {
  display: flex;
  align-items: center;
  margin-bottom: 5px;
  height: 30px;
 }
 
-div.repos div.repo .top span {
+.repos div.repo .top span {
  font: 500 17px "Poppins";
  color: var(--link);
  cursor: pointer;
 }
 
-div.repos div.repo .top span:hover {
+.repos div.repo .top span:hover {
  text-decoration: underline;
 }
 
-div.repos div.repo p.description {
+.repos div.repo p.description {
  font-family: Segoe_normal;
  font-size: 15px;
  color: var(--gray);
 }
 
-div.repos div.repo .bottom {
+.repos div.repo .bottom {
  display: flex;
  align-items: center;
  height: 30px;
  margin: 5px 0 0 ;
 }
 
-div.repos div.repo .bottom div, div.repos div.repo .bottom p {
+.repos div.repo .bottom div, .repos div.repo .bottom p {
  display: flex;
  align-items: center;
  margin: 0 10px 0 4px;
@@ -290,19 +290,19 @@ div.repos div.repo .bottom div, div.repos div.repo .bottom p {
  font-size: 13px;
 }
 
-div.repos div.repo .bottom div.stars, div.repos div.repo .bottom div.forks {
+.repos div.repo .bottom div.stars, .repos div.repo .bottom div.forks {
  font-size: 12px;
 }
 
-div.repos div.repo .bottom div svg {
+.repos div.repo .bottom div svg {
  height: 14px;
  margin-right: 6px;
 }
-div.repos div.repo .bottom div.lang {
+.repos div.repo .bottom div.lang {
  margin: 0 10px 0 -3px;
 }
 
-div.repos div.repo .bottom div.lang div {
+.repos div.repo .bottom div.lang div {
  width: 12px;
  height: 12px;
  border-radius: 50%;
@@ -325,6 +325,7 @@ div.repos div.repo .bottom div.lang div {
  font: 500 14px "Poppins";
  border: 1px solid #21262d;
  background: none;
+ opacity: .5;
 }
 
 .repos div.buttons button.clickable {
@@ -407,7 +408,7 @@ section.container.not-found button {
 
     section.result.active div.profile div.photo img { width: 200px }
     
-    div.repos div.repos div.repo {
+    .repos .repos div.repo {
         width: 455px;
     }
 }
