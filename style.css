@@ -237,12 +237,12 @@ section.result.active div.details div.hover:hover svg, section.result.active div
  text-decoration: underline;
 }
 
-section.result.active div.repos {
+div.repos div.repos {
  position: relative;
  padding-bottom: 100px;
 }
 
-section.result.active div.repo {
+div.repos div.repo {
  width: 100vw;
  display: flex;
  flex-direction: column;
@@ -250,37 +250,37 @@ section.result.active div.repo {
  margin: 1rem 0 0 2rem;
 }
 
-section.result.active div.repo .top {
+div.repos div.repo .top {
  display: flex;
  align-items: center;
  margin-bottom: 5px;
  height: 30px;
 }
 
-section.result.active div.repo .top span {
+div.repos div.repo .top span {
  font: 500 17px "Poppins";
  color: var(--link);
  cursor: pointer;
 }
 
-section.result.active div.repo .top span:hover {
+div.repos div.repo .top span:hover {
  text-decoration: underline;
 }
 
-section.result.active div.repo p.description {
+div.repos div.repo p.description {
  font-family: Segoe_normal;
  font-size: 15px;
  color: var(--gray);
 }
 
-section.result.active div.repo .bottom {
+div.repos div.repo .bottom {
  display: flex;
  align-items: center;
  height: 30px;
  margin: 5px 0 0 ;
 }
 
-section.result.active div.repo .bottom div, section.result.active div.repo .bottom p {
+div.repos div.repo .bottom div, div.repos div.repo .bottom p {
  display: flex;
  align-items: center;
  margin: 0 10px 0 4px;
@@ -290,19 +290,19 @@ section.result.active div.repo .bottom div, section.result.active div.repo .bott
  font-size: 13px;
 }
 
-section.result.active div.repo .bottom div.stars, section.result.active div.repo .bottom div.forks {
+div.repos div.repo .bottom div.stars, div.repos div.repo .bottom div.forks {
  font-size: 12px;
 }
 
-section.result.active div.repo .bottom div svg {
+div.repos div.repo .bottom div svg {
  height: 14px;
  margin-right: 6px;
 }
-section.result.active div.repo .bottom div.lang {
+div.repos div.repo .bottom div.lang {
  margin: 0 10px 0 -3px;
 }
 
-section.result.active div.repo .bottom div.lang div {
+div.repos div.repo .bottom div.lang div {
  width: 12px;
  height: 12px;
  border-radius: 50%;
@@ -310,16 +310,16 @@ section.result.active div.repo .bottom div.lang div {
  border: 2px solid rgb(240 246 252 / 20%);
 }
 
-.container.result.active .repos div.repo .bottom div.lang div.ejs {background-color: #a91e50} .container.result.active .repos div.repo .bottom div.lang div.gnuplot {background-color: #f0a9f0} .container.result.active .repos div.repo .bottom div.lang div.lua {background-color: #000080}  .container.result.active .repos div.repo .bottom div.lang div.c {background-color: #555555} .container.result.active .repos div.repo .bottom div.lang div.c-more {background-color: #f34b7d} .container.result.active .repos div.repo .bottom div.lang div.c-sharp {background-color: #178600} .container.result.active .repos div.repo .bottom div.lang div.go {background-color: #00add8} .container.result.active .repos div.repo .bottom div.lang div.swift {background-color: #ffac45} .container.result.active .repos div.repo .bottom div.lang div.scala {background-color: #c22d40} .container.result.active .repos div.repo .bottom div.lang div.java {background-color: #b07219} .container.result.active .repos div.repo .bottom div.lang div.javascript {background-color: #f1e05a} .container.result.active .repos div.repo .bottom div.lang div.html {background-color: #e34c26} .container.result.active .repos div.repo .bottom div.lang div.css {background-color: #563d7c} .container.result.active .repos div.repo .bottom div.lang div.typescript {background-color: #2b7489} .container.result.active .repos div.repo .bottom div.lang div.readme, .container.result.active .repos div.repo .bottom div.lang div.coffeescript {background-color: #174a8b} .container.result.active .repos div.repo .bottom div.lang div.objective-c {background-color: #438eff} .container.result.active .repos div.repo .bottom div.lang div.shell {background-color: #89e051} .container.result.active .repos div.repo .bottom div.lang div.ruby {background-color: #701516} .container.result.active .repos div.repo .bottom div.lang div.python {background-color: #3572a5} .container.result.active .repos div.repo .bottom div.lang div.php {background-color: #4f5d95} .container.result.active .repos div.repo .bottom div.lang div.assembly {background-color: #6e4c13} .container.result.active .repos div.repo .bottom div.lang div.pascal {background-color: #e3f171} .container.result.active .repos div.repo .bottom div.lang div.elixir {background-color: #6e4a7e} .container.result.active .repos div.repo .bottom div.lang div.dart {background-color: #00b4ab} .container.result.active .repos div.repo .bottom div.lang div.graphql {background-color: #e10098} .container.result.active .repos div.repo .bottom div.lang div.vue {background-color: #41b883}
+.repos div.repo .bottom div.lang div.ejs {background-color: #a91e50} .repos div.repo .bottom div.lang div.gnuplot {background-color: #f0a9f0} .repos div.repo .bottom div.lang div.lua {background-color: #000080}  .repos div.repo .bottom div.lang div.c {background-color: #555555} .repos div.repo .bottom div.lang div.c-more {background-color: #f34b7d} .repos div.repo .bottom div.lang div.c-sharp {background-color: #178600} .repos div.repo .bottom div.lang div.go {background-color: #00add8} .repos div.repo .bottom div.lang div.swift {background-color: #ffac45} .repos div.repo .bottom div.lang div.scala {background-color: #c22d40} .repos div.repo .bottom div.lang div.java {background-color: #b07219} .repos div.repo .bottom div.lang div.javascript {background-color: #f1e05a} .repos div.repo .bottom div.lang div.html {background-color: #e34c26} .repos div.repo .bottom div.lang div.css {background-color: #563d7c} .repos div.repo .bottom div.lang div.typescript {background-color: #2b7489} .repos div.repo .bottom div.lang div.readme, .repos div.repo .bottom div.lang div.coffeescript {background-color: #174a8b} .repos div.repo .bottom div.lang div.objective-c {background-color: #438eff} .repos div.repo .bottom div.lang div.shell {background-color: #89e051} .repos div.repo .bottom div.lang div.ruby {background-color: #701516} .repos div.repo .bottom div.lang div.python {background-color: #3572a5} .repos div.repo .bottom div.lang div.php {background-color: #4f5d95} .repos div.repo .bottom div.lang div.assembly {background-color: #6e4c13} .repos div.repo .bottom div.lang div.pascal {background-color: #e3f171} .repos div.repo .bottom div.lang div.elixir {background-color: #6e4a7e} .repos div.repo .bottom div.lang div.dart {background-color: #00b4ab} .repos div.repo .bottom div.lang div.graphql {background-color: #e10098} .repos div.repo .bottom div.lang div.vue {background-color: #41b883}
 
-.container.result.active .repos div.buttons {
+.repos div.buttons {
  position: absolute;
  margin: 2rem 0;
  left: 25%;
  transform: translate(-25%, -0%);
 }
 
-.container.result.active .repos div.buttons button {
+.repos div.buttons button {
  color: var(--link);
  padding: 5px 16px;
  font: 500 14px "Poppins";
@@ -327,28 +327,28 @@ section.result.active div.repo .bottom div.lang div {
  background: none;
 }
 
-.container.result.active .repos div.buttons button.clickable {
+.repos div.buttons button.clickable {
  background-color: #343942;
  opacity: .8;
  cursor: pointer;
  transition: .2s;
 }
 
-.container.result.active .repos div.buttons button.clickable:hover {
+.repos div.buttons button.clickable:hover {
  opacity: 1;
 }
 
-.container.result.active .repos div.buttons button.not-clickabe { /*está errado porquê css não sendo aplicado*/
+.repos div.buttons button.not-clickabe { /*está errado porquê css não sendo aplicado*/
  background: none;
  opacity: .5;
 }
 
-.container.result.active .repos div.buttons button.prev {
+.repos div.buttons button.prev {
  border-right: none;
  border-radius: 5px 0 0 5px;
 }
 
-.container.result.active .repos div.buttons button.next {
+.repos div.buttons button.next {
  margin-left: -3.4px;
  border-radius: 0 5px 5px 0;
 }
@@ -407,7 +407,7 @@ section.container.not-found button {
 
     section.result.active div.profile div.photo img { width: 200px }
     
-    section.result.active div.repos div.repo {
+    div.repos div.repos div.repo {
         width: 455px;
     }
 }
@@ -415,13 +415,13 @@ section.container.not-found button {
 @media (max-width: 1020px) {
     main section.search form {text-align: center}
 
-    .container.result.active .repos {
+    .repos {
         margin-left: 100px !important;
     }
 }
 
 @media (max-width: 1200px) and (min-width: 1000px) {
-    .container.result.active .repos {
+    .repos {
         margin-left: 50px;
     }
 }
