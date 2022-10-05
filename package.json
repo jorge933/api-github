@@ -4,12 +4,16 @@
   "description": "",
   "main": "scripts.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel ./index.html",
+    "build": "parcel build ./index.html"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jorge933/api-github.git"
   },
   "author": "Jorge Vitor Pimentel",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^2.7.0"
+  }
 }
