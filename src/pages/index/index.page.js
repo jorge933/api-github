@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+import { Search } from "../../functions/Search.js";
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>API GITHUB</title>
-</head>
+export class IndexPage extends HTMLElement {
+  constructor() {
+    super();
+  }
 
-<body class="">
-    <noscript
-        style="width: 100vw; height: 100vh; position: fixed; background-color: yellow; display: flex; justify-content: center; align-items: center; font-size: 10rem;">
-        Ative o Javascript
-    </noscript>
-
+  connectedCallback() {
+    this.innerHTML = `
     <header class="container">
         <span class="repositories-count">
             <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
@@ -27,7 +19,6 @@
         </span>
     </header>
 
-    <main>
         <section class="search container">
             <form class="search-user" autocomplete="off">
                 <h1>Pesquise um usuario no github</h1>
@@ -90,9 +81,22 @@
         </section>
 
         <section class="container repos starred"></section>
-    </main>
+    `;
 
-    <script src="./scripts.js" type="module"></script>
-</body>
+    const $form = this.querySelector("section.search form");
+    const $formContainer = $form.parentElement;
 
-</html>
+    $formContainer.classList.add("active");
+
+    $form.addEventListener("submit", (e) => {
+      $formContainer.classList.remove("active");
+      e.preventDefault();
+      window.confirm(
+        "Se o usuário possuir muitos repositórios, o carregamento pode demorar"
+      );
+      Search($form.querySelector('input[type="text"]').value);
+    });
+  }
+}
+
+customElements.define("ag-index", IndexPage);
