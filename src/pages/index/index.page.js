@@ -1,8 +1,9 @@
-import { Search } from "../../functions/Search.js";
+import { SearchUser } from "../../functions/Search.js";
 
 export class IndexPage extends HTMLElement {
   constructor() {
     super();
+    this.search = new SearchUser();
   }
 
   connectedCallback() {
@@ -94,7 +95,7 @@ export class IndexPage extends HTMLElement {
       window.confirm(
         "Se o usuário possuir muitos repositórios, o carregamento pode demorar"
       );
-      Search($form.querySelector('input[type="text"]').value);
+      this.search.Search($form.querySelector('input[type="text"]').value);
     });
   }
 }
