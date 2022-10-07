@@ -1,4 +1,5 @@
 import { ROUTES } from "./constants/routes";
+import { RoutesType } from "./models/types.model";
 
 const $main = document.querySelector("#root");
 
@@ -6,19 +7,19 @@ class SinglePageApplication {
   constructor() {
     this.windowLoadListener();
   }
-  getTargetRoute(hash) {
+  getTargetRoute(hash: string) {
     const hashIsEmpty = hash === "";
     return hashIsEmpty ? "index" : hash.replace("#", "");
   }
 
   renderPage() {
-    $main.innerHTML = "";
+    $main!.innerHTML = "";
     const hashedRoute = window.location.hash;
     const targetRoute = this.getTargetRoute(hashedRoute);
-    const [fragment, params] = targetRoute.split("/");
-    const hasParam = !!params;
-    const page = hasParam ? ROUTES[fragment](params) : ROUTES[fragment]();
-    $main.appendChild(page);
+    const routeAndParams = targetRoute.split("/");
+    const fragment = routeAndParams[0] as keyof RoutesType;
+    const page = ROUTES[fragment]();
+    $main!.appendChild(page);
   }
 
   hashListener() {

@@ -1,9 +1,9 @@
-import { SearchUser } from "../../functions/Search.js";
+import { SearchUser } from "../../class/Search";
 
 export class IndexPage extends HTMLElement {
+  search = new SearchUser();
   constructor() {
     super();
-    this.search = new SearchUser();
   }
 
   connectedCallback() {
@@ -85,17 +85,20 @@ export class IndexPage extends HTMLElement {
     `;
 
     const $form = this.querySelector("section.search form");
-    const $formContainer = $form.parentElement;
+    const $formContainer = $form?.parentElement;
 
-    $formContainer.classList.add("active");
+    $formContainer?.classList.add("active");
 
-    $form.addEventListener("submit", (e) => {
-      $formContainer.classList.remove("active");
+    $form?.addEventListener("submit", (e) => {
+      $formContainer?.classList.remove("active");
       e.preventDefault();
       window.confirm(
         "Se o usuário possuir muitos repositórios, o carregamento pode demorar"
       );
-      this.search.Search($form.querySelector('input[type="text"]').value);
+      const $searchUser: HTMLInputElement | null =
+        $form.querySelector('input[type="text"]');
+      const searchingForUser = $searchUser!.value;
+      this.search.Search(searchingForUser);
     });
   }
 }

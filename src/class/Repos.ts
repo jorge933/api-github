@@ -1,12 +1,11 @@
-import { OtherMethods } from "./OtherMethods.js";
+import { OtherMethods } from "./OtherMethods";
 
 export class Repos {
-  constructor() {
-    this.otherMethods = new OtherMethods();
-  }
-  async showUserRepositories(user) {
+  otherMethods = new OtherMethods();
+
+  async showUserRepositories(user: string) {
     const $header = document.querySelector("header");
-    let $repos_cont = document.querySelector(
+    let $repos_cont: HTMLElement | null = document.querySelector(
       "section.container.result div.repos"
     );
 
@@ -25,17 +24,17 @@ export class Repos {
         ReposCount += Repos.length;
 
         if (page > 1) {
-          const $parentRepos = $repos_cont.parentElement;
+          const $parentRepos = $repos_cont?.parentElement;
 
           $repos_cont = document.createElement("div");
           $repos_cont.classList.add("container");
           $repos_cont.classList.add("repos");
-          $repos_cont.dataset.page = page;
+          $repos_cont.dataset.page = page.toString();
 
-          $parentRepos.append($repos_cont);
+          $parentRepos?.append($repos_cont);
         }
 
-        this.otherMethods.AddReposInDOM(Repos, $repos_cont);
+        this.otherMethods.AddReposInDOM(Repos, $repos_cont!);
 
         page++;
       } else break;
@@ -44,9 +43,10 @@ export class Repos {
     page--;
     ReposCount++;
 
-    $header.querySelector(".count").innerText = ReposCount;
+    const $count: HTMLElement | null = $header!.querySelector(".count");
+    $count!.innerText = ReposCount.toString();
 
-    $header.classList.add("active");
-    $repos_cont.classList.add("active");
+    $header?.classList.add("active");
+    $repos_cont?.classList.add("active");
   }
 }

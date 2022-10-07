@@ -1,12 +1,11 @@
-import { NotFound } from "./NotFound.js";
-import { Result } from "./Result.js";
+import { NotFound } from "./NotFound";
+import { Result } from "./Result";
 
 export class SearchUser {
-  constructor() {
-    this.notFound = new NotFound();
-    this.result = new Result();
-  }
-  async Search(user) {
+  notFound = new NotFound();
+  result = new Result();
+
+  async Search(user: string) {
     const fetchUser = await fetch(`https://api.github.com/users/${user}`);
 
     if (fetchUser.status === 200) {
