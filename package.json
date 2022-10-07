@@ -13,6 +13,7 @@
   "author": "Jorge Vitor Pimentel",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.19.3",
     "parcel": "^2.7.0"
   }
 }
