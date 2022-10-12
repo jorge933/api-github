@@ -1,3 +1,4 @@
+import { Repository } from "../models/repository.model";
 import { OtherMethods } from "./OtherMethods";
 
 export class Repos {
@@ -17,10 +18,11 @@ export class Repos {
       const fetchRepos = await fetch(
         `https://api.github.com/users/${user}/repos?page=${page}`
       );
-      const Repos = await fetchRepos.json();
+      const Repos: Repository[] = await fetchRepos.json();
 
       if (Repos.length > 0) {
         pages.push(Repos);
+        console.log(Repos);
         ReposCount += Repos.length;
 
         if (page > 1) {
@@ -34,19 +36,24 @@ export class Repos {
           $parentRepos?.append($repos_cont);
         }
 
-        this.otherMethods.AddReposInDOM(Repos, $repos_cont!);
+        Repos.forEach((repository) => {
+          const repositoryInString = JSON.stringify(repository);
+          const $repository = document.createElement("ag-repository");
+          $repository.setAttribute("repository", repositoryInString);
+          $repos_cont?.appendChild($repository);
+        });
 
         page++;
       } else break;
     }
 
     page--;
-    ReposCount++;
 
     const $count: HTMLElement | null = $header!.querySelector(".count");
     $count!.innerText = ReposCount.toString();
 
     $header?.classList.add("active");
-    $repos_cont?.classList.add("active");
+    const $firstReposCont = document.querySelector(".repos[data-page='1']");
+    $firstReposCont?.classList.add("active");
   }
 }

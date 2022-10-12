@@ -1,7 +1,9 @@
 import { SearchUser } from "../../class/Search";
+import { RepositoryComponent } from "../../components/repository/repository.component";
 
 export class IndexPage extends HTMLElement {
   search = new SearchUser();
+  private readonly declarations = [RepositoryComponent];
   constructor() {
     super();
   }
