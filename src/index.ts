@@ -6,6 +6,7 @@ const $main = document.querySelector("#root");
 class SinglePageApplication {
   constructor() {
     this.windowLoadListener();
+    this.renderPage = this.renderPage.bind(this);
   }
   getTargetRoute(hash: string) {
     const hashIsEmpty = hash === "";
@@ -18,7 +19,9 @@ class SinglePageApplication {
     const targetRoute = this.getTargetRoute(hashedRoute);
     const routeAndParams = targetRoute.split("/");
     const fragment = routeAndParams[0] as keyof RoutesType;
-    const page = ROUTES[fragment]();
+    const params = routeAndParams[1];
+    const hasParams = params!!;
+    const page = hasParams ? ROUTES[fragment](params) : ROUTES[fragment]();
     $main!.appendChild(page);
   }
 

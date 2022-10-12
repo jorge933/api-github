@@ -38,6 +38,7 @@ ag-index {
 ag-user {
   background-color: #0d1117;
   display: flex;
+  flex-direction: column;
 }
 
 header {

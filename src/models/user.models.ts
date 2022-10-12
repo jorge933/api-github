@@ -11,3 +11,20 @@ export interface User {
   following: number;
   followers: number;
 }
+
+export type UserKey = Array<keyof User>;
+
+export interface Infos {
+  company: {
+    innerHTML: string;
+  };
+  location: {
+    innerHTML: string;
+  };
+  email: {
+    innerHTML: string;
+  };
+  twitter_username: {
+    innerHTML: string;
+  };
+}
