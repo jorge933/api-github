@@ -1,449 +1,542 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
- --white: #dce2e7;
- --white-dark: #c9d1d9;
- --gray: #8b949e;
- --link: #58a6ff;
+  --white: #dce2e7;
+  --white-dark: #c9d1d9;
+  --gray: #8b949e;
+  --link: #58a6ff;
 }
 
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Poppins';
- list-style: none;
- word-wrap: break-word;
- box-sizing: border-box;
- text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  list-style: none;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 @font-face {
-    font-family: Segoe_normal;
-    src: url(./fonts/Segoe\ UI.ttf);
+  font-family: Segoe_normal;
+  src: url(./fonts/Segoe\ UI.ttf);
 }
 @font-face {
-    font-family: Segoe_bold;
-    src: url(./fonts/Segoe\ UI\ Bold.ttf);
+  font-family: Segoe_bold;
+  src: url(./fonts/Segoe\ UI\ Bold.ttf);
 }
 
-
-body {
- background-color: #282e28;
- overflow-x: hidden;
+main {
+  overflow-x: hidden;
 }
 
-body.result {
- background-color: #0d1117;
+ag-index {
+  background-color: #282e28;
+}
+
+ag-user {
+  background-color: #0d1117;
+  display: flex;
 }
 
 header {
- position: relative;
- left: 27.795%;
+  position: relative;
+  left: 27.795%;
 }
 
 header span.repositories-count {
- height: 50px;
- margin-top: 10px;
- border-bottom: 1px solid #f78166;
- color: var(--white-dark);
- fill: var(--white-dark);
- display: flex;
- align-items: center;
- width: max-content;
- font-size: 13px;
+  height: 50px;
+  margin-top: 10px;
+  border-bottom: 1px solid #f78166;
+  color: var(--white-dark);
+  fill: var(--white-dark);
+  display: flex;
+  align-items: center;
+  width: max-content;
+  font-size: 13px;
 }
 
 header span.repositories-count * {
- margin: 0 5px;
+  margin: 0 5px;
 }
 
 header span .count {
- width: fit-content;
- height: fit-content;
+  width: fit-content;
+  height: fit-content;
 
- display: flex;
- align-items: center;
- justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
- padding: 5px;
- border-radius: 50%;
- background-color: #343942;
- font-size: 12px;
- clip-path: circle();
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #343942;
+  font-size: 12px;
+  clip-path: circle();
 }
 
-main { 
- width: 100vw;
- height: 100vh;
+main {
+  width: 100vw;
+  height: 100vh;
 }
 
 .container {
- display: none;
+  display: none;
 }
 
 .container.active {
- display: unset;
+  display: unset;
 }
 
 main section.search form {
- width: 50vw;
- height: 50vh;
- background-color: #ccc;
- border-radius: 5px;
- 
- position: relative;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vh;
+  background-color: #ccc;
+  border-radius: 5px;
 
- display: flex;
- flex-direction: column;
- align-items: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main section.search form h1 {
- color: rgb(233, 69, 69);
- font: 700 2rem "Poppins";
- margin: 2rem 0 3rem;
+  color: rgb(233, 69, 69);
+  font: 700 2rem "Poppins";
+  margin: 2rem 0 3rem;
 }
 
 main section.search form input {
- width: 70%;
- height: 30px;
- margin: 1rem 0;
- border: none;
- border-radius: 5px;
- outline: none;
+  width: 70%;
+  height: 30px;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }
 
 main section.search form input[type="text"] {
- padding: 15px;
+  padding: 15px;
 }
 
 main section.search form input[type="text"]:hover {
- opacity: .7;
+  opacity: 0.7;
 }
 
 main section.search form input[type="submit"]:hover {
- cursor: pointer;
- opacity: .8;
- transform: scale(.93);
- transition: .2.8s;
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(0.93);
+  transition: 0.2.8s;
 }
 
 section.result.active {
- display: flex;
+  display: flex;
 }
 
 section.result.active div.profile {
- width: 25vw;
- padding: 2em 0 0 2em;
- position: relative;
+  width: 25vw;
+  padding: 2em 0 0 2em;
+  position: relative;
 }
 
 section.result.active div.profile div.photo img {
- width: 300px;
- clip-path: circle();
+  width: 300px;
+  clip-path: circle();
 }
 
 section.result.active div.profile div.names {
- display: flex;
- flex-direction: column;
- margin: 7px 0 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 7px 0 10px;
 }
 
 section.result.active div.profile div.names span.name {
- font: 500 20px "Poppins";
- color: var(--white);
+  font: 500 20px "Poppins";
+  color: var(--white);
 }
 
 section.result.active div.profile div.names span.username {
- font: 400 14px "Poppins";
- color: var(--gray);
+  font: 400 14px "Poppins";
+  color: var(--gray);
 }
 
 section.result.active div.profile p.bio {
- letter-spacing: .4px;
- font-family: Segoe_normal;
- line-height: 20px;
- color: var(--white);
- margin: .5em 0 1em;
+  letter-spacing: 0.4px;
+  font-family: Segoe_normal;
+  line-height: 20px;
+  color: var(--white);
+  margin: 0.5em 0 1em;
 }
 
 section.result.active div.others {
- height: 40px;
- display: flex;
- align-items: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 section.result.active div.others div {
- display: flex;
- align-items: center;
- font-family: Segoe_normal;
- color: var(--gray);
- fill: var(--gray);
- font-size: 14px;
- cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: Segoe_normal;
+  color: var(--gray);
+  fill: var(--gray);
+  font-size: 14px;
+  cursor: pointer;
 }
 
 section.result.active div.others div:hover {
- color: var(--link);
- fill: var(--link);
+  color: var(--link);
+  fill: var(--link);
 }
 
 section.result.active div.others div * {
- margin: 0 3px;
+  margin: 0 3px;
 }
 
 section.result.active div.others div span.f {
- margin-bottom: 1.3px;
+  margin-bottom: 1.3px;
 }
 
 section.result.active div.others div span.total {
- font: 500 14px "Poppins";
- margin-top: 1.5px;
- color: var(--white);
+  font: 500 14px "Poppins";
+  margin-top: 1.5px;
+  color: var(--white);
 }
 
-section.result.active div.others div span.hr { 
- margin-top: 2.5px;
- color: var(--gray);
+section.result.active div.others div span.hr {
+  margin-top: 2.5px;
+  color: var(--gray);
 }
 
 section.result.active div.details div {
- width: max-content;
- display: flex;
- align-items: center;
- margin: 5px 0;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
 }
 
 section.result.active div.details div svg {
- fill: var(--gray);
- color: var(--gray);
- margin-right: 10px;
+  fill: var(--gray);
+  color: var(--gray);
+  margin-right: 10px;
 }
 
 section.result.active div.details div span {
- font-family: Segoe_normal;
- color: var(--white);
- font-size: 13px;
+  font-family: Segoe_normal;
+  color: var(--white);
+  font-size: 13px;
 }
 
-section.result.active div.details div.hover:hover svg, section.result.active div.details div.hover:hover span {
- fill: var(--link);
- color: var(--link);
- text-decoration: underline;
+section.result.active div.details div.hover:hover svg,
+section.result.active div.details div.hover:hover span {
+  fill: var(--link);
+  color: var(--link);
+  text-decoration: underline;
 }
 
 .repos .repos {
- position: relative;
- padding-bottom: 100px;
+  position: relative;
+  padding-bottom: 100px;
 }
 
-.repos div.repo {
- width: 100vw;
- display: flex;
- flex-direction: column;
- border-bottom: 1.5px solid #21262d;
- margin: 1rem 0 0 2rem;
+.repos ag-repository {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1.5px solid #21262d;
+  margin: 1rem 0 0 2rem;
 }
 
-.repos div.repo .top {
- display: flex;
- align-items: center;
- margin-bottom: 5px;
- height: 30px;
+ag-repository .top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  height: 30px;
 }
 
-.repos div.repo .top span {
- font: 500 17px "Poppins";
- color: var(--link);
- cursor: pointer;
+ag-repository .top span {
+  font: 500 17px "Poppins";
+  color: var(--link);
+  cursor: pointer;
 }
 
-.repos div.repo .top span:hover {
- text-decoration: underline;
+ag-repository .top span:hover {
+  text-decoration: underline;
 }
 
-.repos div.repo p.description {
- font-family: Segoe_normal;
- font-size: 15px;
- color: var(--gray);
+ag-repository p.description {
+  font-family: Segoe_normal;
+  font-size: 15px;
+  color: var(--gray);
 }
 
-.repos div.repo .bottom {
- display: flex;
- align-items: center;
- height: 30px;
- margin: 5px 0 0 ;
+ag-repository .bottom {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin: 5px 0 0;
 }
 
-.repos div.repo .bottom div, .repos div.repo .bottom p {
- display: flex;
- align-items: center;
- margin: 0 10px 0 4px;
- color: var(--gray);
- fill: var(--gray);
- font-family: Segoe_normal;
- font-size: 13px;
+ag-repository .bottom div,
+ag-repository .bottom p {
+  display: flex;
+  align-items: center;
+  margin: 0 10px 0 4px;
+  color: var(--gray);
+  fill: var(--gray);
+  font-family: Segoe_normal;
+  font-size: 13px;
 }
 
-.repos div.repo .bottom div.stars, .repos div.repo .bottom div.forks {
- font-size: 12px;
+ag-repository .bottom div.stars,
+ag-repository .bottom div.forks {
+  font-size: 12px;
 }
 
-.repos div.repo .bottom div svg {
- height: 14px;
- margin-right: 6px;
+ag-repository .bottom div svg {
+  height: 14px;
+  margin-right: 6px;
 }
-.repos div.repo .bottom div.lang {
- margin: 0 10px 0 -3px;
-}
-
-.repos div.repo .bottom div.lang div {
- width: 12px;
- height: 12px;
- border-radius: 50%;
- background-color: rgb(168, 168, 168);
- border: 2px solid rgb(240 246 252 / 20%);
+ag-repository .bottom div.lang {
+  margin: 0 10px 0 -3px;
 }
 
-.repos div.repo .bottom div.lang div.ejs {background-color: #a91e50} .repos div.repo .bottom div.lang div.gnuplot {background-color: #f0a9f0} .repos div.repo .bottom div.lang div.lua {background-color: #000080}  .repos div.repo .bottom div.lang div.c {background-color: #555555} .repos div.repo .bottom div.lang div.c-more {background-color: #f34b7d} .repos div.repo .bottom div.lang div.c-sharp {background-color: #178600} .repos div.repo .bottom div.lang div.go {background-color: #00add8} .repos div.repo .bottom div.lang div.swift {background-color: #ffac45} .repos div.repo .bottom div.lang div.scala {background-color: #c22d40} .repos div.repo .bottom div.lang div.java {background-color: #b07219} .repos div.repo .bottom div.lang div.javascript {background-color: #f1e05a} .repos div.repo .bottom div.lang div.html {background-color: #e34c26} .repos div.repo .bottom div.lang div.css {background-color: #563d7c} .repos div.repo .bottom div.lang div.typescript {background-color: #2b7489} .repos div.repo .bottom div.lang div.readme, .repos div.repo .bottom div.lang div.coffeescript {background-color: #174a8b} .repos div.repo .bottom div.lang div.objective-c {background-color: #438eff} .repos div.repo .bottom div.lang div.shell {background-color: #89e051} .repos div.repo .bottom div.lang div.ruby {background-color: #701516} .repos div.repo .bottom div.lang div.python {background-color: #3572a5} .repos div.repo .bottom div.lang div.php {background-color: #4f5d95} .repos div.repo .bottom div.lang div.assembly {background-color: #6e4c13} .repos div.repo .bottom div.lang div.pascal {background-color: #e3f171} .repos div.repo .bottom div.lang div.elixir {background-color: #6e4a7e} .repos div.repo .bottom div.lang div.dart {background-color: #00b4ab} .repos div.repo .bottom div.lang div.graphql {background-color: #e10098} .repos div.repo .bottom div.lang div.vue {background-color: #41b883}
+ag-repository .bottom div.lang div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgb(168, 168, 168);
+  border: 2px solid rgb(240 246 252 / 20%);
+}
+
+ag-repository .bottom div.lang div.ejs {
+  background-color: #a91e50;
+}
+ag-repository .bottom div.lang div.gnuplot {
+  background-color: #f0a9f0;
+}
+ag-repository .bottom div.lang div.lua {
+  background-color: #000080;
+}
+ag-repository .bottom div.lang div.c {
+  background-color: #555555;
+}
+ag-repository .bottom div.lang div.c-more {
+  background-color: #f34b7d;
+}
+ag-repository .bottom div.lang div.c-sharp {
+  background-color: #178600;
+}
+ag-repository .bottom div.lang div.go {
+  background-color: #00add8;
+}
+ag-repository .bottom div.lang div.swift {
+  background-color: #ffac45;
+}
+ag-repository .bottom div.lang div.scala {
+  background-color: #c22d40;
+}
+ag-repository .bottom div.lang div.java {
+  background-color: #b07219;
+}
+ag-repository .bottom div.lang div.javascript {
+  background-color: #f1e05a;
+}
+ag-repository .bottom div.lang div.html {
+  background-color: #e34c26;
+}
+ag-repository .bottom div.lang div.css {
+  background-color: #563d7c;
+}
+ag-repository .bottom div.lang div.typescript {
+  background-color: #2b7489;
+}
+ag-repository .bottom div.lang div.readme,
+ag-repository .bottom div.lang div.coffeescript {
+  background-color: #174a8b;
+}
+ag-repository .bottom div.lang div.objective-c {
+  background-color: #438eff;
+}
+ag-repository .bottom div.lang div.shell {
+  background-color: #89e051;
+}
+ag-repository .bottom div.lang div.ruby {
+  background-color: #701516;
+}
+ag-repository .bottom div.lang div.python {
+  background-color: #3572a5;
+}
+ag-repository .bottom div.lang div.php {
+  background-color: #4f5d95;
+}
+ag-repository .bottom div.lang div.assembly {
+  background-color: #6e4c13;
+}
+ag-repository .bottom div.lang div.pascal {
+  background-color: #e3f171;
+}
+ag-repository .bottom div.lang div.elixir {
+  background-color: #6e4a7e;
+}
+ag-repository .bottom div.lang div.dart {
+  background-color: #00b4ab;
+}
+ag-repository .bottom div.lang div.graphql {
+  background-color: #e10098;
+}
+ag-repository .bottom div.lang div.vue {
+  background-color: #41b883;
+}
 
 .repos div.buttons {
- position: absolute;
- margin: 2rem 0;
- left: 25%;
- transform: translate(-25%, -0%);
+  position: absolute;
+  margin: 2rem 0;
+  left: 25%;
+  transform: translate(-25%, -0%);
 }
 
 .repos div.buttons button {
- color: var(--link);
- padding: 5px 16px;
- font: 500 14px "Poppins";
- border: 1px solid #21262d;
- background: none;
- opacity: .5;
+  color: var(--link);
+  padding: 5px 16px;
+  font: 500 14px "Poppins";
+  border: 1px solid #21262d;
+  background: none;
+  opacity: 0.5;
 }
 
 .repos div.buttons button.clickable {
- background-color: #343942;
- opacity: .8;
- cursor: pointer;
- transition: .2s;
+  background-color: #343942;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .repos div.buttons button.clickable:hover {
- opacity: 1;
+  opacity: 1;
 }
 
-.repos div.buttons button.not-clickabe { /*está errado porquê css não sendo aplicado*/
- background: none;
- opacity: .5;
+.repos div.buttons button.not-clickabe {
+  /*está errado porquê css não sendo aplicado*/
+  background: none;
+  opacity: 0.5;
 }
 
 .repos div.buttons button.prev {
- border-right: none;
- border-radius: 5px 0 0 5px;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
 }
 
 .repos div.buttons button.next {
- margin-left: -3.4px;
- border-radius: 0 5px 5px 0;
+  margin-left: -3.4px;
+  border-radius: 0 5px 5px 0;
 }
 
-section.container.not-found.active {
- width: 300px;
- height: 400px;
- border-radius: 10px;
- background-color: #fff;
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- font-size: 1.2rem;
+.not-found.active {
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 }
 
-section.container.not-found button {
- background: none;
- border: none;
- color: var(--link);
- text-decoration: underline;
- margin-top: 5rem;
- font: 500 15px "Poppins";
- cursor: pointer;
+.not-found button {
+  background: none;
+  border: none;
+  color: var(--link);
+  text-decoration: underline;
+  margin-top: 5rem;
+  font: 500 15px "Poppins";
+  cursor: pointer;
 }
-
 
 @media (max-width: 500px) {
-    main section.search form {
-        width: 100vw;
-        height: 100vh;
-    }
+  main section.search form {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 @media (min-width: 500px) and (max-width: 1015px) {
-    main section.search form {
-        width: 70vw;
-        height: 70vh;
-        text-align: center;
-    }
+  main section.search form {
+    width: 70vw;
+    height: 70vh;
+    text-align: center;
+  }
 
-    main section.search form input {width: 90%}
+  main section.search form input {
+    width: 90%;
+  }
 }
 
 @media (max-width: 820px) {
-    body {
-        overflow-x: visible;
-    }
-    header {position: fixed}
+  body {
+    overflow-x: visible;
+  }
+  header {
+    position: fixed;
+  }
 
-    section.container.result {flex-direction: column}
+  .result {
+    flex-direction: column;
+  }
 
-    section.result.active div.profile div.photo img { width: 200px }
-    
-    .repos .repos div.repo {
-        width: 455px;
-    }
+  .result.active div.profile div.photo img {
+    width: 200px;
+  }
+
+  .repos ag-repository {
+    width: 455px;
+  }
 }
 
 @media (max-width: 1020px) {
-    main section.search form {text-align: center}
+  main section.search form {
+    text-align: center;
+  }
 
-    .repos {
-        margin-left: 100px !important;
-    }
+  .repos {
+    margin-left: 100px !important;
+  }
 }
 
 @media (max-width: 1200px) and (min-width: 1000px) {
-    .repos {
-        margin-left: 50px;
-    }
+  .repos {
+    margin-left: 50px;
+  }
 }
 
 @media (max-height: 500px) {
-    main section.search form {
-        height: 100vh;
-        text-align: center;
-    }
+  main section.search form {
+    height: 100vh;
+    text-align: center;
+  }
 }
 
 @media (max-height: 320px) {
-    main section.search form h1 {
-        font-size: 1.5rem;
-        margin: 1rem 0 2rem;
-    }
+  main section.search form h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem;
+  }
 }
 
 @media (max-height: 250px) {
-    main section.search form h1 {
-        font-size: 1.3rem;
-        margin: .5rem 0 1rem;
-    }
+  main section.search form h1 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0 1rem;
+  }
 }
