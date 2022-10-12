@@ -1,5 +1,5 @@
 export type RoutesType = {
-  index(): HTMLElement;
+  search(): HTMLElement;
   user(params: string): HTMLElement;
 };
 

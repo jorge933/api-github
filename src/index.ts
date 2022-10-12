@@ -10,7 +10,7 @@ class SinglePageApplication {
   }
   getTargetRoute(hash: string) {
     const hashIsEmpty = hash === "";
-    return hashIsEmpty ? "index" : hash.replace("#", "");
+    return hashIsEmpty ? "search" : hash.replace("#", "");
   }
 
   renderPage() {

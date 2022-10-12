@@ -1,16 +1,16 @@
-import { IndexPage } from "../pages/index/index.page";
+import { SearchUserPage } from "../pages/search-user/search-user.page";
 import { UserPage } from "../pages/user/user.page";
 
-const index = () => document.createElement("ag-index");
+const search = () => document.createElement("ag-search-user");
 const user = (params?: string) => {
   const $page = document.createElement("ag-user");
   $page.setAttribute("params", params!);
   return $page;
 };
 
-const declarations = [IndexPage, UserPage];
+const declarations = [SearchUserPage, UserPage];
 
 export const ROUTES = {
-  index,
+  search,
   user,
 };

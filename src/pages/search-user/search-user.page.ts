@@ -1,6 +1,6 @@
 import { RepositoryComponent } from "../../components/repository/repository.component";
 
-export class IndexPage extends HTMLElement {
+export class SearchUserPage extends HTMLElement {
   private readonly declarations = [RepositoryComponent];
   constructor() {
     super();
@@ -40,4 +40,4 @@ export class IndexPage extends HTMLElement {
   }
 }
 
-customElements.define("ag-index", IndexPage);
+customElements.define("ag-search-user", SearchUserPage);
