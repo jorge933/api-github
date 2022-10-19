@@ -1,4 +1,4 @@
-import { Utils } from "../../class/Utils";
+import { Utils } from "../../services/utils.service";
 import { SelectPageComponent } from "../../components/select-page/select-page.component";
 import { Repository } from "../../models/repository.model";
 import { Name, ReturnParams } from "../../models/types.model";

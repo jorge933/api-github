@@ -1,4 +1,4 @@
-import { Utils } from "../../class/Utils";
+import { Utils } from "../../services/utils.service";
 import repositoryTemplate from "./repository.component.html";
 
 export class RepositoryComponent extends HTMLElement {
