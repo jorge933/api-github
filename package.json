@@ -16,5 +16,6 @@
     "@babel/core": "^7.19.3",
     "babel-plugin-transform-html-import-to-string": "^2.0.0",
     "parcel": "^2.7.0"
-  }
+  },
+  "": ""
 }

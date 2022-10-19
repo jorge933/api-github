@@ -1,4 +1,5 @@
 import { Utils } from "../../class/Utils";
+import { SelectPageComponent } from "../../components/select-page/select-page.component";
 import { Repository } from "../../models/repository.model";
 import { Name, ReturnParams } from "../../models/types.model";
 import { Infos, User, UserKey } from "../../models/user.models";
@@ -8,6 +9,7 @@ import userTemplate from "./user.page.html";
 
 export class UserPage extends HTMLElement {
   private apiGithub = new ApiGithub();
+  private readonly declarations = [SelectPageComponent];
   constructor() {
     super();
   }
@@ -15,14 +17,33 @@ export class UserPage extends HTMLElement {
   async connectedCallback() {
     const { user, page } = this.returnParams();
     this.removeAttribute("params");
+
     const userObj = await this.apiGithub.getUser(user);
-    const repos = await this.apiGithub.getUserRepos(user, page);
-    const objectBind = { ...userObj, repositoriesCount: repos.length };
-    const newTemplate = Utils.bindModelToView(userTemplate, objectBind);
+
+    const newTemplate = Utils.bindModelToView(userTemplate, userObj);
     this.innerHTML = newTemplate;
 
-    this.bindReposInView(repos);
-    document.querySelector(".result")?.classList.add("active");
+    const repos = await this.apiGithub.getUserRepos(user, page);
+
+    const $reposCont: HTMLElement | null = document.querySelector("div.repos");
+
+    this.bindReposInView(repos, $reposCont);
+
+    const publicRepos = userObj.public_repos;
+    if (publicRepos > 1) {
+      const numberOfPages = publicRepos / 30;
+      const numberOfPagesRounded = Math.ceil(numberOfPages);
+      const numberOfPagesInString = numberOfPagesRounded.toString();
+
+      const $agSelectPage = document.createElement("ag-select-page");
+      $agSelectPage.setAttribute("current-page", page as string);
+      $agSelectPage.setAttribute("pages", numberOfPagesInString);
+      $reposCont?.appendChild($agSelectPage);
+    }
+
+    const $result = document.querySelector(".result");
+    $result?.classList.add("active");
+
     const { company, location, email, twitter_username } = userObj;
     const $details = this.querySelector(".details");
     const infos = {
@@ -52,9 +73,7 @@ export class UserPage extends HTMLElement {
     });
   }
 
-  bindReposInView(repos: Repository[]) {
-    const $reposCont: HTMLElement | null = document.querySelector("div.repos");
-
+  bindReposInView(repos: Repository[], $reposCont: HTMLElement | null) {
     repos.forEach((repository) => {
       const repositoryInString = JSON.stringify(repository);
       const $repository = document.createElement("ag-repository");

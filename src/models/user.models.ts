@@ -10,6 +10,7 @@ export interface User {
   login: string;
   following: number;
   followers: number;
+  public_repos: number;
 }
 
 export type UserKey = Array<keyof User>;

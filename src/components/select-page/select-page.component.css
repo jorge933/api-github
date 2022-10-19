@@ -1,0 +1,19 @@
+ag-select-page {
+  display: flex;
+  justify-content: right;
+  margin-right: 393px;
+}
+
+button {
+  font: 400 14px "Poppins";
+  background: none;
+  border: none;
+  color: var(--link);
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  color: #484f58;
+  cursor: auto;
+}
