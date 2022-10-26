@@ -15,7 +15,7 @@ export interface User {
 
 export type UserKey = Array<keyof User>;
 
-export interface Infos {
+export interface UserTemplateDetails {
   company: {
     innerHTML: string;
   };
@@ -28,4 +28,9 @@ export interface Infos {
   twitter_username: {
     innerHTML: string;
   };
+}
+
+export interface UserPageRouterParams {
+  user: string;
+  page?: string;
 }

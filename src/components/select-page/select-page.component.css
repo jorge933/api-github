@@ -2,6 +2,7 @@ ag-select-page {
   display: flex;
   justify-content: right;
   margin-right: 393px;
+  padding: 20px;
 }
 
 button {
@@ -9,7 +10,7 @@ button {
   background: none;
   border: none;
   color: var(--link);
-  margin-left: 5px;
+  margin-left: 35px;
   cursor: pointer;
 }
 

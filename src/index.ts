@@ -1,27 +1,17 @@
-import { ROUTES } from "./constants/routes";
-import { RoutesType } from "./models/types.model";
+import { RouterService } from "./services/router.service";
 
 const $main = document.querySelector("#root");
 
 class SinglePageApplication {
+  private readonly routerService = new RouterService();
   constructor() {
     this.windowLoadListener();
     this.renderPage = this.renderPage.bind(this);
   }
-  getTargetRoute(hash: string) {
-    const hashIsEmpty = hash === "";
-    return hashIsEmpty ? "search" : hash.replace("#", "");
-  }
 
   renderPage() {
     $main!.innerHTML = "";
-    const hashedRoute = window.location.hash;
-    const targetRoute = this.getTargetRoute(hashedRoute);
-    const routeAndParams = targetRoute.split("/");
-    const fragment = routeAndParams[0] as keyof RoutesType;
-    const params = routeAndParams[1];
-    const hasParams = params!!;
-    const page = hasParams ? ROUTES[fragment](params) : ROUTES[fragment]();
+    const page = this.routerService.getPage();
     $main!.appendChild(page);
   }
 

@@ -241,12 +241,12 @@ section.result.active div.details div.hover:hover span {
   text-decoration: underline;
 }
 
-.repos .repos {
+.repositories .repositories {
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 15px;
 }
 
-.repos ag-repository {
+.repositories ag-repository {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -396,14 +396,14 @@ ag-repository .bottom div.lang div.vue {
   background-color: #41b883;
 }
 
-.repos div.buttons {
+.repositories div.buttons {
   position: absolute;
   margin: 2rem 0;
   left: 25%;
   transform: translate(-25%, -0%);
 }
 
-.repos div.buttons button {
+.repositories div.buttons button {
   color: var(--link);
   padding: 5px 16px;
   font: 500 14px "Poppins";
@@ -412,29 +412,29 @@ ag-repository .bottom div.lang div.vue {
   opacity: 0.5;
 }
 
-.repos div.buttons button.clickable {
+.repositories div.buttons button.clickable {
   background-color: #343942;
   opacity: 0.8;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.repos div.buttons button.clickable:hover {
+.repositories div.buttons button.clickable:hover {
   opacity: 1;
 }
 
-.repos div.buttons button.not-clickabe {
+.repositories div.buttons button.not-clickabe {
   /*está errado porquê css não sendo aplicado*/
   background: none;
   opacity: 0.5;
 }
 
-.repos div.buttons button.prev {
+.repositories div.buttons button.prev {
   border-right: none;
   border-radius: 5px 0 0 5px;
 }
 
-.repos div.buttons button.next {
+.repositories div.buttons button.next {
   margin-left: -3.4px;
   border-radius: 0 5px 5px 0;
 }
@@ -500,7 +500,7 @@ ag-repository .bottom div.lang div.vue {
     width: 200px;
   }
 
-  .repos ag-repository {
+  .repositories ag-repository {
     width: 455px;
   }
 }
@@ -510,13 +510,13 @@ ag-repository .bottom div.lang div.vue {
     text-align: center;
   }
 
-  .repos {
+  .repositories {
     margin-left: 100px !important;
   }
 }
 
 @media (max-width: 1200px) and (min-width: 1000px) {
-  .repos {
+  .repositories {
     margin-left: 50px;
   }
 }

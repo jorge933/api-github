@@ -2,17 +2,20 @@ import { Repository } from "../models/repository.model";
 import { User } from "../models/user.models";
 
 export class ApiGithub {
+  readonly BASE_URL = "https://api.github.com";
+  readonly USERS_ROUTE = "users";
+  readonly REPOSITORIES_ROUTE = "repos";
+
   async getUser(user: string) {
-    const fetchUser = await fetch(`https://api.github.com/users/${user}`);
+    const fetchUser = await fetch(`${this.BASE_URL}/${this.USERS_ROUTE}/${user}`);
     const userObj: User = await fetchUser.json();
     return userObj;
   }
 
-  async getUserRepos(user: string, page?: string) {
-    const baseUrl = `users/${user}/repos`;
-    const url = page ? `${baseUrl}?page=${page}` : baseUrl;
-    const fetchRepos = await fetch(`https://api.github.com/${url}`);
-    const repos: Repository[] = await fetchRepos.json();
-    return repos;
+  async getUserRepositories(user: string, page?: string) {
+    const queryParams = page ? `?page=${page}` : "";
+    const fetchRepos = await fetch(`${this.BASE_URL}/${this.USERS_ROUTE}/${user}  /${this.REPOSITORIES_ROUTE}${queryParams}`);
+    const repositories: Repository[] = await fetchRepos.json();
+    return repositories;
   }
 }

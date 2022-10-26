@@ -1,6 +1,6 @@
-type License = {
+export interface License {
   name: string;
-};
+}
 
 export interface Repository {
   description: string;

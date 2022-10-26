@@ -1,15 +1,18 @@
-import selectPageTemplate from "./select-page.component.html";
 import selectPageStyles from "./select-page.component.css";
+import selectPageTemplate from "./select-page.component.html";
 
 export class SelectPageComponent extends HTMLElement {
+  styles: { readonly [key: string]: string };
   constructor() {
     super();
   }
 
   connectedCallback() {
-    const styles = selectPageStyles;
+    this.styles = selectPageStyles;
     this.innerHTML = selectPageTemplate;
+
     const { numberOfPages, currentPage } = this.returnData();
+
     const $previous = this.querySelector(".previous") as HTMLButtonElement;
     const $next = this.querySelector(".next") as HTMLButtonElement;
 
@@ -19,20 +22,17 @@ export class SelectPageComponent extends HTMLElement {
     const isLastPage = numberOfPages === currentPage;
     $next.disabled = isLastPage;
 
+    const setPage = (action: boolean) => {
+      const newHash = this.newHash(currentPage, action);
+      window.location.hash = newHash;
+    };
+
     if (!isFirstPage) {
-      $previous.addEventListener("click", () => {
-        const newHash = this.newHash(currentPage, false);
-        window.location.hash = newHash;
-      });
+      $previous.addEventListener("click", () => setPage(false));
     }
 
     if (!isLastPage) {
-      console.log(1);
-      $next.addEventListener("click", () => {
-        console.log(2);
-        const newHash = this.newHash(currentPage, true);
-        window.location.hash = newHash;
-      });
+      $next.addEventListener("click", () => setPage(true));
     }
   }
 
@@ -47,12 +47,9 @@ export class SelectPageComponent extends HTMLElement {
     const currentPage = this.getAttribute("current-page") as string;
     const numberOfPages = this.getAttribute("pages") as string;
 
-    const currentPageInNumber = parseInt(currentPage);
-    const numberOfPagesInNumber = parseInt(numberOfPages);
-
     return {
-      currentPage: currentPageInNumber,
-      numberOfPages: numberOfPagesInNumber,
+      currentPage: +currentPage,
+      numberOfPages: +numberOfPages,
     };
   }
 }
